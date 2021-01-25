@@ -1,0 +1,10 @@
+query EthExchangeRate {
+    ethExchangeRate {
+        ...EthExchangeRateType
+        __typename
+    }
+}
+fragment EthExchangeRateType on EthExchangeRate {
+    Usd
+    __typename
+}

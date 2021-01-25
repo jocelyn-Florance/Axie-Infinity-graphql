@@ -1,0 +1,10 @@
+query GetProfileBrief { profile {...ProfileBrief  __typename  }}
+fragment ProfileBrief on AccountProfile {
+    accountId
+    addresses {...Addresses    __typename }
+    email
+    name  __typename}
+fragment Addresses on NetAddresses {
+    ethereum
+    tomo
+    loom __typename}

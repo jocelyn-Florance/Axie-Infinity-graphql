@@ -1,0 +1,26 @@
+query GetItemBriefList($from: Int, $size: Int, $sort: SortBy, $criteria: ItemsCriteria, $owner: String) {
+    items(from: $from, size: $size, sort: $sort, criteria: $criteria, owner: $owner) {
+        total
+        results {...ItemBrief      __typename } __typename }}
+fragment ItemBrief on Item {
+    realTokenId
+    tokenType
+    tokenId
+    type
+    name
+    itemAlias
+    rarity
+    figureURL
+    auction {...AxieAuction __typename } __typename }
+fragment AxieAuction on Auction {
+    startingPrice
+    endingPrice
+    startingTimestamp
+    endingTimestamp
+    duration
+    timeLeft
+    currentPrice
+    currentPriceUSD
+    suggestedPrice
+    seller
+    listingIndex  __typename}

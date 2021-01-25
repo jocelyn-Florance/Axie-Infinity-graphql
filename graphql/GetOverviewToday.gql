@@ -1,0 +1,12 @@
+query GetOverviewToday {
+    marketStats {
+        market {
+            today {...OverviewFragment __typename}
+            last7Days {...OverviewFragment __typename}
+            last30Days {...OverviewFragment __typename } __typename } __typename }}
+fragment OverviewFragment on SettlementStats {
+    count
+    averagePrice
+    averagePriceUsd
+    volume
+    volumeUsd __typename}

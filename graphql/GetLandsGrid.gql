@@ -1,0 +1,16 @@
+query GetLandsGrid($from: Int!, $size: Int!, $sort: LandsSortBy!, $criteria: LandsCriteria) {
+    lands(criteria: $criteria, from: $from, size: $size, sort: $sort) {
+        total
+        result {...LandBriefV2 __typename} __typename}}
+fragment LandBriefV2 on Land {
+    realTokenId
+    owner
+    landType
+    row
+    col
+    auction {
+        currentPrice
+        startingTimestamp
+        currentPriceUSD __typename }
+    ownerProfile {
+        name __typename } __typename}
